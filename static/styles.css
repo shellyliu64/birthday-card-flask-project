@@ -1,0 +1,52 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+.navbar {
+  background: #E8889D !important;
+  float: none;
+}
+
+.navbar.navbar-expand-md.navbar-light.bg-light.border li a {
+    color: #3a6d85;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #3a6d85 !important;
+}
+
+body {
+    background-color: #F6C2CB;
+    color: #3a6d85;
+    font-weight: 400;
+    text-align: center;
+}
+
+title {
+    color: #3a6d85;
+    font: Snell Roundhand, cursive;
+}
+
+.template {
+    width: 500px;
+}
