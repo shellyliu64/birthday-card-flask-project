@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Birthday Calendar
+{% endblock %}
+
+{% block main %}
+
+    <!-- source: https://fullcalendar.io/ -->
+    <div id="calendar"></div>
+    <!-- {{birthdays}} -->
+     <script>
+        var birthdays = {{birthdays | tojson}};
+        var events = [{
+            title: 'Front-End Conference',
+            start: '2020-11-16',
+            allDay: true
+        },
+        {
+            title: 'Chillout',
+            start: '2018-11-15',
+            allDay: true
+        },
+        {
+            title: 'Vacation',
+            start: '2018-11-23',
+            end: '2018-11-29'
+        }
+        ];
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          events : birthdays
+        });
+        calendar.render();
+      });
+
+    </script>
+
+{% endblock %}

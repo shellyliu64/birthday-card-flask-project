@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Approve Applications
+{% endblock %}
+
+{% block main %}
+
+    <!-- approve a user from a list of users who have submitted a VIP application -->
+    <form action="/approval" method="post">
+        <div class="form-group">
+            <label for="users">Users: </label>
+            <select name="users">
+                {% for user in users%}
+                    <option value = "{{user}}">{{user}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Approve Application</button>
+    </form>
+
+{% endblock %}

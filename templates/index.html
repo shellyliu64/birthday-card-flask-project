@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <!-- image source: http://sharinghappybirthdays.org/calendar/ -->
+    <img src="../static/cupcake.png" alt="pic" style="width:500px;height:300px;">
+
+    <!-- create a card and VIP Application approval buttons -->
+    <h1>{{"Welcome, " ~ name}}</h1>
+    <form action="/" method="post">
+        <button class="btn btn-primary" type="submit" name = "button" value = "create">Create a Card!</button>
+        {% if session.user_id == shelly_id or session.user_id == eura_id %}
+            <button class="btn btn-primary" type="submit" name = "button" value = "approval">Approve VIP Application</button>
+        {% endif %}
+    </form>
+
+{% endblock %}

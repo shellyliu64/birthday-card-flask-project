@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Card Templates
+{% endblock %}
+
+
+{% block main %}
+
+    <h3>Here are our available card templates!</h3>
+    <!-- This part displays different messages depending on if the user is a VIP or not -->
+    {%if session.user_id in vip_id%}
+        <h3>As a VIP member, you have an extra VIP template where you can insert your own image into the card!</h3>
+    {% else %}
+        <h3>If you would like to unlock more templates, become a VIP member!</h3>
+    {% endif %}
+
+    <!-- These are the templates that we have available -->
+    <figure>
+            <img src="../static/puppy_card.png" class = "template">
+            <figcaption>Puppy Card</figcaption>
+    </figure>
+    <figure>
+            <img src="../static/kitten_card.png" class = "template">
+            <figcaption>Kitten Card</figcaption>
+    </figure>
+    <figure>
+            <img src="../static/flower_card.png" class = "template">
+            <figcaption>Flower Card</figcaption>
+    </figure>
+
+{% endblock %}

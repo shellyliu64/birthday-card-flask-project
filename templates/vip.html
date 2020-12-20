@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create A Card
+{% endblock %}
+
+{% block main %}
+    <!-- instructions for VIP application -->
+    <h1>Register to be a VIP user!</h1>
+    <h3>Instructions:</h2>
+    <h3>
+    <ol>
+    <li>Go to a charity website. Here are some examples: <a href="https://www.amnesty.org/en/donate/">Amnesty International</a>, <a href="https://www.prisonpolicy.org/donate.html?t=general">Prison Policy Initiative</a>, <a href="https://www.redcross.org/donate/donation.html/">American Red Cross</a></li>
+    <li>Donate! There is no set amount. Every little bit helps!</li>
+    <li>Screenshot the donation confirmation page</li>
+    <li>Submit the screenshot on this page! We will review the confirmation page and you will be registered as a VIP user!</li>
+    </ol>
+    </h3>
+
+    <!-- submit screenshot of donation -->
+    <form action="/vip" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="file">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+{% endblock %}
